@@ -10,5 +10,7 @@ def cross_entropy_error(y, t):
 y = np.array([0.1, 0.05, 0.6, 0.0, 0.05, 0.1, 0.0, 0.1, 0.0, 0.0])
 t = np.array([0, 0, 1, 0, 0, 0, 0, 0, 0, 0])
 
+"""
 print(mean_squared_error(y, t))
 print(cross_entropy_error(y, t))
+"""
