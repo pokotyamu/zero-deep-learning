@@ -21,4 +21,22 @@ def numerical_gradient(f, x):
 
     return grad
 
-print(numerical_gradient(function2, np.array([3.0, 4.0])))
+def gradient_discent(f, init_x, lr=0.01, step_num=100):
+    x = init_x
+    for i in range(step_num):
+        grad = numerical_gradient(f, x)
+        x -= lr * grad
+
+    return x
+
+print(gradient_discent(function2, np.array([-3.0, 4.0])))
+print(gradient_discent(function2, np.array([-3.0, 4.0]), lr=0.1))
+print(gradient_discent(function2, np.array([-3.0, 4.0]), lr=10))
+print(gradient_discent(function2, np.array([-3.0, 4.0]), lr=1e-10))
+"""
+[-0.39785867  0.53047822]
+[ -6.11110793e-10   8.14814391e-10]
+[ -2.58983747e+13  -1.29524862e+12]
+[-2.99999994  3.99999992]
+なるべく少ない計算回数で収束させたい。
+"""
